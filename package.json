@@ -1,0 +1,51 @@
+{
+  "name": "psLib",
+  "version": "1.0.0",
+  "description": "psLib base on AlloyPhoto",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.config.js",
+    "build": "webpack --colors --progress --hide-modules --config webpack.dist.config.js --display-error-details"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://code.aliyun.com/gengfire/psLib.git"
+  },
+  "keywords": [
+    "tips",
+    "vue",
+    "loading"
+  ],
+  "author": "gengfire",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://code.aliyun.com/gengfire/psLib/issues"
+  },
+  "homepage": "https://code.aliyun.com/gengfire/psLib#readme",
+  "devDependencies": {
+    "babel-core": "^6.1.2",
+    "babel-loader": "^6.1.0",
+    "babel-plugin-transform-runtime": "^6.1.2",
+    "babel-preset-es2015": "^6.1.2",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-stage-0": "^6.1.2",
+    "babel-runtime": "^5.8.38",
+    "cross-env": "^1.0.8",
+    "css-loader": "^0.23.0",
+    "cssnext-loader": "^1.0.1",
+    "del": "^2.0.2",
+    "eventsource-polyfill": "^0.9.6",
+    "exports-loader": "^0.6.2",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "function-bind": "^1.0.2",
+    "html-loader": "^0.3.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.13.0",
+    "template-html-loader": "0.0.3",
+    "url-loader": "^0.5.7",
+    "webpack": "1.12.2",
+    "webpack-dev-server": "1.12.0"
+  },
+  "dependencies": {}
+}
