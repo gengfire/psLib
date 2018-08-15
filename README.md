@@ -1,6 +1,30 @@
 # psLib，针对ImageData处理库，提取自[AlloyImage](https://github.com/AlloyTeam/AlloyImage)图像处理引擎，不局限于前端canvas
 ## 可用于nodejs和微信小程序，和canvas分离
 
+## demo
+```html
+<div id="ret"></div>
+<script type="text/javascript" src="../dist/psLib.min.js"></script>
+<script>
+  getImageData('demo.jpg', (imageData) => {
+    const imgObj = psLib(imageData);
+    const cloneData = imgObj.clone();
+    const respData = imgObj
+    // .filter('sharp')
+    // .alter('brightness', 10)
+    // .cover(originData, '正片叠底')
+    // .ps('暖秋')
+    .ps('复古')
+    // .ps('lomo')
+    // .cover(psLib(cloneData).ps('lomo'), '滤色')
+    // .fix('浮雕效果')
+    .export();
+    document.getElementById('ret').innerHTML = '<img src="'+ imgData2Base64(cloneData) +'" /><img src="'+ imgData2Base64(respData) +'" />';
+  });
+</script>
+```
+
+
 ## 使用方法
 ### fix 基础处理
 - 查找边缘 fix('borderline');
@@ -40,3 +64,14 @@
 - 暖秋 ps('warmAutumn')
 - 木雕 ps('warmAutumn')
 - 粗糙 ps('rough')
+
+### cover 叠加图层
+cover(lowerData, upperData, method, alpha = 1, dx = 0, dy = 0, channel = 'RGB')
+- lowerData: 底层图层数据
+- upperData: 叠加层图层数据
+- alpha 范围为0 - 1
+- method: 颜色减淡|变暗|变亮|正片叠底|滤色|叠加|强光|差值|排除|点光|颜色加深|线性加深|线性减淡|柔光|亮光|线性光|实色混合
+
+### getImageData 通过canvas将图片导出为ImageData
+
+### imgData2Base64 通过canvas将ImageData导出为base64
