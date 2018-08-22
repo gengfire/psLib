@@ -102,17 +102,18 @@ export const selectiveColor = (imgData, color = '中性色', cmyk = [.5, .5, .5,
                         const factor = (alterNum[i] + K + alterNum[i] * K);
 
                         //相对调节
-                        if(isRelative){
+                        let realUpLimit = 0;
+                        if (isRelative) {
                             //如果分量大于128  减少量=增加量
                             if(colorArr[i] > 128){
                                 lowLimitDelta = upLimitDelta;
                             }
 
                             //先算出黑色导致的原始增量
-                            if(K > 0){
-                                const realUpLimit = colorArr[i] - K * lowLimitDelta; 
-                            }else{
-                                const realUpLimit = colorArr[i] - K * upLimitDelta; 
+                            if (K > 0) {
+                                realUpLimit = colorArr[i] - K * lowLimitDelta; 
+                            } else {
+                                realUpLimit = colorArr[i] - K * upLimitDelta; 
                             }
 
                             //标准化
@@ -135,11 +136,9 @@ export const selectiveColor = (imgData, color = '中性色', cmyk = [.5, .5, .5,
                             }
 
 
-                        }else{
-
+                        } else {
                             //现在量
-                            const realUpLimit = limit * - factor + colorArr[i];
-
+                            realUpLimit = limit * - factor + colorArr[i];
                         }
 
                         if(realUpLimit > upLimit) realUpLimit = upLimit;

@@ -17,8 +17,6 @@ export const toThresh = (imgData, lamta = 128) => {
             data[i] = data[i] > lamta ? 255 : 0;
         }
     }
-
-    imgData.data = data;
-
+    
     return imgData;
 }

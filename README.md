@@ -2,6 +2,7 @@
 ## 可用于nodejs和微信小程序，和canvas分离
 
 ## demo
+[DEMO](http://api.naline.cn/pslib/)
 ```html
 <div id="ret"></div>
 <script type="text/javascript" src="../dist/psLib.min.js"></script>

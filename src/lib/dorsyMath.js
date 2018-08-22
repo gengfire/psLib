@@ -96,9 +96,12 @@ const dorsyMath = {
 
         if(arg){
 
+            let m = 0;
+            let n = 0;
+
             if(isNaN(arg)){
-                const m = /(\d+)\s*\*/.exec(arg)[1];
-                const n = /\*\s*(\d+)/.exec(arg)[1];
+                m = /(\d+)\s*\*/.exec(arg)[1];
+                n = /\*\s*(\d+)/.exec(arg)[1];
             }else{
                 m = arg;
                 n = arg2;
@@ -224,7 +227,7 @@ const dorsyMath = {
 
             }
 
-            const pixelMatrix = new P.lib.dorsyMath.Matrix(pixelArr,3,matrixSize);
+            const pixelMatrix = new dorsyMath.Matrix(pixelArr,3,matrixSize);
             const resultMatrix = pixelMatrix.mutiply(template);
 
             for(let j = 0;j < 3;j ++){
