@@ -1,8 +1,7 @@
 # psLib，针对ImageData处理库，提取自[AlloyImage](https://github.com/AlloyTeam/AlloyImage)图像处理引擎，不局限于前端canvas
 ## 可用于nodejs和微信小程序，和canvas分离
-
 ## demo
-[DEMO](http://api.naline.cn/pslib/)
+示例 [DEMO](https://gengfire.github.io/)
 ```html
 <div id="ret"></div>
 <script type="text/javascript" src="../dist/psLib.min.js"></script>
